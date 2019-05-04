@@ -1,4 +1,4 @@
-
+window.onload = function() {
     // your code goes here
     //example add to mens section. Use the id of the banner
     addScrollto('#mens-de');
@@ -34,4 +34,4 @@
             isScrolledIntoView(clone)
         })
     }
-
+};
