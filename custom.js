@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function(){
         if(isVisible && !el.classList.contains('prevent')){
         el.classList.add('prevent')
         setTimeout(function(){ el.classList.add('hidden'); }, 500);
-        console.log('hhh')
         //if scrolled above div only show element
         }else if((elemTop > window.innerHeight)){
         el.classList.remove('prevent')
