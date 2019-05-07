@@ -1,13 +1,14 @@
+
+
 <script language="javascript" type="text/javascript">
     window.onload = function() {
         // your code goes here
         //example add to mens section. Use the id of the banner
-        addScrollto('#mens-de');
-        addScrollto('#womens-de');
-
+        addScrollto('#the-collection-de');
 
         function addScrollto(element){
-            let clone = document.querySelector('.Index-page-scroll-indicator').cloneNode( true );
+            let clone = document.getElementById(element).innerHTML += '<div class="Index-page-scroll-indicator custom-scroll" data-controller="ScrollIndicator" data-controllers-bound="ScrollIndicator"><div class="Index-page-scroll-indicator-text">CUSTOM SCROLL</div><svg class="Index-page-scroll-indicator-arrow Icon Icon--caretLarge--down" viewBox="0 0 48 23"><use xlink:href="/assets/ui-icons.svg#caret-down-large-icon"></use></svg><div class="Index-page-scroll-indicator-line"></div></div>';
+            //let clone = document.querySelector('.Index-page-scroll-indicator').cloneNode( true );
             //clone.setAttribute( 'class', 'Index-page-scroll-indicator custom-scroll' );
             document.querySelector(element).appendChild( clone );
 
