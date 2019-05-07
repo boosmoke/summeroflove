@@ -4,13 +4,15 @@
     window.onload = function() {
         // your code goes here
         //example add to mens section. Use the id of the banner
-        addScrollto('#the-collection-de');
+        addScrollto('#collection', 'collectionScroll');
 
-        function addScrollto(element){
-            let clone = document.getElementById(element).innerHTML += '<div class="Index-page-scroll-indicator custom-scroll" data-controller="ScrollIndicator" data-controllers-bound="ScrollIndicator"><div class="Index-page-scroll-indicator-text">CUSTOM SCROLL</div><svg class="Index-page-scroll-indicator-arrow Icon Icon--caretLarge--down" viewBox="0 0 48 23"><use xlink:href="/assets/ui-icons.svg#caret-down-large-icon"></use></svg><div class="Index-page-scroll-indicator-line"></div></div>';
+        function addScrollto(element, id){
+            let htmlNode = '<div class="Index-page-scroll-indicator custom-scroll" id="'+id+'" data-controller="ScrollIndicator" data-controllers-bound="ScrollIndicator"><div class="Index-page-scroll-indicator-text">ALL PRODUCTS</div><svg class="Index-page-scroll-indicator-arrow Icon Icon--caretLarge--down" viewBox="0 0 48 23"><use xlink:href="/assets/ui-icons.svg#caret-down-large-icon"></use></svg><div class="Index-page-scroll-indicator-line"></div></div>';
+            let clone = document.querySelector(element).innerHTML += htmlNode;
             //let clone = document.querySelector('.Index-page-scroll-indicator').cloneNode( true );
             //clone.setAttribute( 'class', 'Index-page-scroll-indicator custom-scroll' );
-            document.querySelector(element).appendChild( clone );
+            //document.querySelector(element).appendChild( clone );
+            let scrollEl = document.querySelector('#'+id);
 
             function isScrolledIntoView(el) {
                 var rect = el.getBoundingClientRect();
@@ -34,7 +36,7 @@
             }
 
             document.addEventListener('scroll', function(){
-                isScrolledIntoView(clone)
+                isScrolledIntoView(scrollEl)
             })
         }
     };
